@@ -1,0 +1,102 @@
+2017-03-07 10:29:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: ","; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR, is_aliveBOOLEAN, score INT, health DOUBLE) [50004-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:4059)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3922)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5864)
+	at org.h2.command.Parser.parseCreate(Parser.java:4217)
+	at org.h2.command.Parser.parsePrepared(Parser.java:360)
+	at org.h2.command.Parser.parse(Parser.java:315)
+	at org.h2.command.Parser.parse(Parser.java:287)
+	at org.h2.command.Parser.prepareCommand(Parser.java:252)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-07 10:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TABLE" not found; SQL statement:
+//CREATE TABLE players (id IDENTITY,name VARCHAR, is_alive BOOLEAN, score INT, health DOUBLE)
+
+DELETE TABLE players [42102-191]
+2017-03-07 10:36:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAYERS" already exists; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+
+//DROP TABLE players [42101-191]
+2017-03-07 10:36:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAYERS" already exists; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+
+//DROP TABLE players [42101-191]
+2017-03-07 10:36:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE PLAYERS (ID IDENTITY,NAME VARCHAR(100), IS_ALIVE BOOLEAN, SCORE INT, HEALTH DOUBLE)
+
+DROP[*] TABLE PLAYERS "; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+
+DROP TABLE players [42000-191]
+2017-03-07 10:37:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE PLAYERS (ID IDENTITY,NAME VARCHAR(100), IS_ALIVE BOOLEAN, SCORE INT, HEALTH DOUBLE)
+
+DROP[*] TABLE PLAYERS "; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+
+DROP TABLE players [42000-191]
+2017-03-07 10:39:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE PLAYERS (ID IDENTITY,NAME VARCHAR(100), IS_ALIVE BOOLEAN, SCORE INT, HEALTH DOUBLE)
+
+                    
+
+INSERT[*] INTO PLAYERS VALUES(NULL,'Bob', TRUE, 0, 100.0) "; SQL statement:
+CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+
+//DROP TABLE players
+
+INSERT INTO players VALUES(NULL,'Bob', true, 0, 100.0) [42000-191]
+2017-03-07 10:45:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "                                                                                                  
+                    
+                                                        
+                                  
+UDATE[*] PLAYERS SET IS_ALIVE= FALSE WHERE ID=1 "; expected "UPDATE, USE, {"; SQL statement:
+//CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+//DROP TABLE players
+//INSERT INTO players VALUES(NULL,'Bob', true, 0, 100.0)
+//SELECT * FROM players where id=1
+UDATE players SET is_alive= FALSE WHERE id=1 [42001-191]
+2017-03-07 10:45:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "                                                                                                  
+                    
+                                                        
+                                  
+UDATE[*] PLAYERS SET IS_ALIVE = FALSE WHERE ID=1 "; expected "UPDATE, USE, {"; SQL statement:
+//CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+//DROP TABLE players
+//INSERT INTO players VALUES(NULL,'Bob', true, 0, 100.0)
+//SELECT * FROM players where id=1
+UDATE players SET is_alive = FALSE WHERE id=1 [42001-191]
+2017-03-07 10:45:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "                                                                                                  
+                    
+                                                        
+                                  
+UDATE[*] PLAYERS SET IS_ALIVE = FALSE WHERE ID=1 "; expected "UPDATE, USE, {"; SQL statement:
+//CREATE TABLE players (id IDENTITY,name VARCHAR(100), is_alive BOOLEAN, score INT, health DOUBLE)
+//DROP TABLE players
+//INSERT INTO players VALUES(NULL,'Bob', true, 0, 100.0)
+//SELECT * FROM players where id=1
+UDATE players SET is_alive = FALSE WHERE id=1 [42001-191]
+2017-03-07 11:45:30 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "LAYERS" not found; SQL statement:
+SELECT * FROM layers [42102-191]
